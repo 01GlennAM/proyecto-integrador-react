@@ -1,0 +1,21 @@
+/* ============================================================
+   All Store — variables.css
+   Migrado 1:1 desde base.css :root. Paleta mint/verde original
+   conservada para mantener la identidad visual del proyecto.
+============================================================ */
+
+:root {
+  --mint:       #3ECFA4;
+  --mint-dark:  #28B08A;
+  --green:      #1A6B52;
+  --green-deep: #0D3D30;
+  --bg:         #F0FAF6;
+  --surface:    #FFFFFF;
+  --text:       #112219;
+  --text-soft:  #4A7A62;
+  --error:      #E05252;
+  --success:    #2DB87A;
+  --radius:     14px;
+  --shadow:     0 8px 32px rgba(30,100,70,.13);
+  --transition: 0.28s cubic-bezier(.4,0,.2,1);
+}

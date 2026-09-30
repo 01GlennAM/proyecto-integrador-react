@@ -1,0 +1,149 @@
+/* ============================================================
+   All Store — global.css
+   Reset + estilos compartidos por toda la app (antes base.css).
+   Los estilos exclusivos de cada página/componente viven junto
+   al .jsx correspondiente.
+============================================================ */
+@import "./variables.css";
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+h1, h2, h3 { font-family: "Syne", sans-serif; }
+
+.hidden { display: none !important; }
+
+/* Encabezado de sección, compartido por Home/Productos/Carrito/Perfil */
+.section-heading {
+  padding: 32px 32px 0;
+  font-size: 1.3rem;
+  color: var(--green-deep);
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ============================================================
+   BOTONES GENERALES
+============================================================ */
+.btn-primary {
+  background: linear-gradient(135deg, var(--mint), var(--mint-dark));
+  color: #fff;
+  border: none;
+  padding: 14px 24px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn-primary:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+
+.btn-secondary {
+  background: var(--bg);
+  color: var(--green);
+  border: 2px solid var(--mint);
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ============================================================
+   FORMULARIOS
+============================================================ */
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: .9rem;
+  color: var(--text-soft);
+  font-weight: 600;
+}
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 2px solid var(--bg);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  transition: border-color var(--transition);
+}
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--mint);
+}
+.form-row { display: flex; gap: 16px; }
+.form-row .form-group { flex: 1; }
+
+/* ============================================================
+   TARJETAS DE PRODUCTO (catálogo) — compartidas Home/Productos
+============================================================ */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 24px 32px 48px;
+}
+
+.product-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color var(--transition), transform var(--transition);
+  position: relative;
+}
+.product-card:hover { border-color: var(--mint); transform: translateY(-4px); }
+
+.product-imagen {
+  font-size: 3.2rem;
+  text-align: center;
+  padding: 28px 0;
+  background: var(--bg);
+}
+
+.product-main { padding: 14px 16px 18px; }
+.product-categoria {
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--mint-dark);
+}
+.product-main h3 { font-size: 1.05rem; margin: 4px 0 6px; color: var(--green-deep); }
+.product-precio { font-weight: 700; color: var(--green); }
+
+.badge-agotado {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--error);
+  color: #fff;
+  font-size: .7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.estado-vacio {
+  text-align: center;
+  color: var(--text-soft);
+  padding: 60px 20px;
+  font-size: 1.05rem;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 640px) {
+  .form-row { flex-direction: column; gap: 0; }
+}
