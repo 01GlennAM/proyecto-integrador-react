@@ -10,10 +10,14 @@ import ProductoDetalle from "../pages/ProductoDetalle";
 import Carrito from "../pages/Carrito";
 import Checkout from "../pages/Checkout";
 import Perfil from "../pages/Perfil";
+import {AuthProvider} from "../context/AuthContext";
+import { CartProvider } from "../context/CartContext";
 
 /** Cada grupo mantiene el layout y la navegación propios de la página. */
 export default function AppRoutes() {
   return (
+    <AuthProvider>
+    <CartProvider>
     <Routes>
       {/* ---------- Pública ---------- */}
       <Route element={<AuthLayout />}>
@@ -57,5 +61,7 @@ export default function AppRoutes() {
       {/* ---------- Cualquier ruta desconocida ---------- */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
+    </CartProvider>
+    </AuthProvider>
   );
 }

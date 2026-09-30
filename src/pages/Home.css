@@ -1,11 +1,12 @@
 .banner {
-  background: linear-gradient(135deg, var(--mint), var(--mint-dark));
-  color: #fff;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--mint) 100%);
+  color: #2c2727;
   padding: 56px 32px;
   text-align: center;
 }
+
 .banner h1 { font-size: 2.2rem; margin-bottom: 10px; }
-.banner p { font-size: 1.05rem; opacity: .95; }
+.banner p { font-size: 1.05rem;  margin-bottom: 20px; }
 
 .category-grid {
   display: grid;

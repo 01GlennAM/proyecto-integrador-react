@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { Outlet } from "react-router-dom";
 
-export function useCart() {
-  const ctx = useContext(CartContext);
-  if (!ctx) {
-    throw new Error("useCart debe usarse dentro de un <CartProvider>");
-  }
-  return ctx;
+/** Layout exclusivo de Login. Reemplaza el wrapper .login-bg de login.html. */
+export default function AuthLayout() {
+  return (
+    <div className="login-bg">
+      <Outlet />
+    </div>
+  );
 }

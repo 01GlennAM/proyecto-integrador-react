@@ -6,6 +6,7 @@ import { formatearPrecio } from "../utils/formatters";
 import EmptyState from "../components/EmptyState/EmptyState";
 import Loader from "../components/Loader/Loader";
 import "./Checkout.css";
+import { CreditCard } from 'lucide-react';
 
 /**
  * Reemplaza checkout.html + checkout.js. Mismas reglas de
@@ -89,9 +90,10 @@ export default function Checkout() {
   const carritoVacio = carrito.length === 0;
 
   return (
-    <>
+    <div className="checkout-page">
       <h2 className="section-heading" style={{ textAlign: "center" }}>
-        💳 Finalizar compra
+        <CreditCard size={24} color="var(--green)" style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+        Finalizar compra
       </h2>
 
       <div className="checkout-content">
@@ -202,6 +204,6 @@ export default function Checkout() {
       </div>
 
       <Loader visible={cargando} />
-    </>
+    </div>
   );
 }

@@ -4,6 +4,7 @@ import { useAuth } from "../hooks/useAuth";
 import { MAX_LOGIN_ATTEMPTS } from "../context/AuthContext";
 import Loader from "../components/Loader/Loader";
 import "./Login.css";
+import {ShoppingBag } from "lucide-react";
 
 /**
  * Reemplaza login.html + auth.js. Conserva: límite de 3 intentos,
@@ -104,10 +105,13 @@ export default function Login() {
   return (
     <div className="login-card">
       <div className="logo-wrap">
-        <span className="logo-icon">🛍️</span>
-        <h1 className="logo-text">All Store</h1>
-        <p className="logo-sub">Tenis, gorras y ropa urbana</p>
-      </div>
+    <span className="logo-icon">
+      {/* Reemplazamos el emoji 🛍️ por este componente */}
+      <ShoppingBag size={32} color="var(--green)" />
+    </span>
+    <h1 className="logo-text">Tienda creativa</h1>
+    <p className="logo-sub">Tenis, gorras y ropa urbana</p>
+  </div>
 
       {modo === "registro" && (
         <div className="form-group">

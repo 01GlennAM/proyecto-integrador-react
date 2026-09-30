@@ -3,7 +3,7 @@ import { useCart } from "../hooks/useCart";
 import { formatearPrecio } from "../utils/formatters";
 import EmptyState from "../components/EmptyState/EmptyState";
 import "./Carrito.css";
-
+import { Trash2 } from 'lucide-react';
 /**
  * Reemplaza carrito.html + carrito.js. cambiarCantidad,
  * eliminarDelCarrito, vaciarCarrito y el cálculo de subtotal/total
@@ -51,7 +51,7 @@ export default function Carrito() {
                   </div>
                   <div className="carrito-subtotal">{formatearPrecio(subtotal)}</div>
                   <button className="btn-eliminar" title="Eliminar" onClick={() => eliminarDelCarrito(index)}>
-                    🗑️
+                    <Trash2 size={18} />
                   </button>
                 </div>
               );

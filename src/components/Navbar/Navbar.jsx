@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import {ShoppingCart, User, LogOut } from "lucide-react";
 import { useAuth } from "../../hooks/useAuth";
 import { useCart } from "../../hooks/useCart";
 import "./Navbar.css";
@@ -32,7 +33,7 @@ export default function Navbar({ showSearch = false, backTo, backLabel }) {
   return (
     <nav className="topbar">
       <Link to="/">
-        <span className="logo-text small">All Store</span>
+        <span className="logo-text small">Tienda Creativa</span>
       </Link>
 
       {showSearch && (
@@ -45,19 +46,18 @@ export default function Navbar({ showSearch = false, backTo, backLabel }) {
         </div>
       )}
 
-      <div className="topbar-actions">
-        {usuario && <span className="nav-user">👤 {usuario.nombre}</span>}
-
-        <Link to="/carrito" className="nav-icon-link">
-          🛒{" "}
-          <span className={`cart-badge ${totalItems === 0 ? "hidden" : ""}`}>
-            {totalItems}
-          </span>
+      <div className="nav-actions">
+        {/* Enlace al carrito (reemplazamos 🛒) */}
+        <Link to="/carrito" className="nav-icon-link" aria-label="Ver carrito de compras">
+        <ShoppingCart size={20} />
+        <span className={`cart-badge ${totalItems === 0 ? "hidden" : ""}`}>
+          {totalItems}
+        </span>
         </Link>
 
-        <Link to="/perfil" className="nav-icon-link">
-          👤
-        </Link>
+      <Link to="/perfil" className="nav-icon-link" aria-label="Ir al perfil de usuario">
+        <User size={20} />
+      </Link>
 
         {backTo && (
           <button className="btn-back" onClick={() => navigate(backTo)}>
@@ -65,9 +65,10 @@ export default function Navbar({ showSearch = false, backTo, backLabel }) {
           </button>
         )}
 
-        {usuario && (
-          <button className="btn-logout" onClick={handleLogout}>
-            🚪 Salir
+      {usuario && (
+        <button className="btn-logout" onClick={handleLogout} aria-label="Cerrar sesión">
+          <LogOut size={18} />
+          <span>Salir</span>
           </button>
         )}
       </div>

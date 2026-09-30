@@ -7,6 +7,7 @@ import OptionSelector from "../components/OptionSelector/OptionSelector";
 import EmptyState from "../components/EmptyState/EmptyState";
 import Loader from "../components/Loader/Loader";
 import "./ProductoDetalle.css";
+import { ShoppingCart } from 'lucide-react';
 
 /**
  * Reemplaza producto.html + producto.js. El id ya no se lee de
@@ -102,7 +103,8 @@ export default function ProductoDetalle() {
         </p>
 
         <button className="btn-primary" disabled={sinStock} onClick={handleAgregar}>
-          🛒 Agregar al carrito
+          <ShoppingCart size={18} style={{ marginRight: '6px', verticalAlign: 'middle' }} />
+          Agregar al carrito
         </button>
 
         {feedback && <p id="agregar-feedback">Producto agregado al carrito</p>}

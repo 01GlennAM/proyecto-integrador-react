@@ -4,7 +4,7 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <footer className="site-footer">
-      Tienda Store · Proyecto académico · © 2026
+      Tienda Creativa · Proyecto académico · © 2026
     </footer>
   );
 }

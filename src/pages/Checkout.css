@@ -5,6 +5,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
+/* O el nombre de la clase contenedora principal */
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--mint) 100%);
 }
 
 .checkout-resumen-wrap, .checkout-form-wrap {

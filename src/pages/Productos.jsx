@@ -75,14 +75,6 @@ export default function Productos() {
           ))}
         </div>
 
-        <div className="topbar-search">
-          <input
-            type="text"
-            placeholder="Buscar producto..."
-            value={textoBusqueda}
-            onChange={(e) => actualizarParam("buscar", e.target.value)}
-          />
-        </div>
 
         <select value={orden} onChange={(e) => actualizarParam("orden", e.target.value)}>
           <option value="relevancia">Relevancia</option>
