@@ -1,0 +1,66 @@
+.carrito-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 28px 24px 60px;
+}
+
+.carrito-fila {
+  display: grid;
+  grid-template-columns: 60px 1fr auto auto 40px;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.carrito-imagen { font-size: 2.2rem; text-align: center; }
+.carrito-info h3 { font-size: 1rem; color: var(--green-deep); }
+.carrito-variante { font-size: .8rem; color: var(--text-soft); }
+.carrito-precio-unit { font-size: .8rem; color: var(--text-soft); }
+
+.carrito-cantidad { display: flex; align-items: center; gap: 8px; }
+.carrito-cantidad .btn-qty {
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  border: 2px solid var(--mint);
+  background: var(--bg);
+  cursor: pointer;
+}
+
+.carrito-subtotal { font-weight: 700; color: var(--green); white-space: nowrap; }
+
+.btn-eliminar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.carrito-resumen {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.carrito-total-linea {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--green-deep);
+}
+
+.carrito-acciones { display: flex; gap: 12px; flex-wrap: wrap; }
+.carrito-acciones a, .carrito-acciones button { flex: 1; text-align: center; }
+
+@media (max-width: 560px) {
+  .carrito-fila { grid-template-columns: 44px 1fr; grid-template-areas: "img info" "img cant" "img sub"; }
+}

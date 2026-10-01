@@ -1,0 +1,38 @@
+.filtros-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 32px 0;
+}
+
+.filtros-categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+}
+
+.btn-filtro {
+  background: var(--surface);
+  border: 2px solid var(--mint);
+  color: var(--green);
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: .85rem;
+  font-weight: 600;
+  transition: background var(--transition), color var(--transition);
+}
+.btn-filtro.active, .btn-filtro:hover {
+  background: var(--mint);
+  color: #fff;
+}
+
+.filtros-bar select {
+  padding: 9px 12px;
+  border-radius: var(--radius);
+  border: 2px solid var(--bg);
+  background: var(--bg);
+  font-size: .9rem;
+}
