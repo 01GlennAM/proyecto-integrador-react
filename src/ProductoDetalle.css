@@ -1,0 +1,85 @@
+.detail-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 36px;
+}
+
+.detail-imagen-wrap {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  height: 280px;
+}
+
+.detail-info .product-categoria { display: block; margin-bottom: 6px; }
+.detail-info h2 { font-size: 1.6rem; color: var(--green-deep); margin-bottom: 8px; }
+.detail-info .product-precio { font-size: 1.3rem; margin-bottom: 14px; display: block; }
+.detail-desc { color: var(--text-soft); margin-bottom: 20px; }
+
+.opciones-grupo { margin-bottom: 18px; }
+.opciones-grupo label {
+  display: block;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  margin-bottom: 8px;
+}
+.opciones-lista { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.btn-opcion {
+  background: var(--bg);
+  border: 2px solid var(--bg);
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: .88rem;
+}
+.btn-opcion.active { border-color: var(--mint); background: var(--surface); color: var(--green); font-weight: 700; }
+
+.selector-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.selector-cantidad .btn-qty {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 2px solid var(--mint);
+  background: var(--surface);
+  color: var(--green);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.selector-cantidad input {
+  width: 56px;
+  text-align: center;
+  padding: 8px 4px;
+  border-radius: 8px;
+  border: 2px solid var(--bg);
+  background: var(--bg);
+}
+
+.stock-msg { font-size: .85rem; margin-bottom: 14px; font-weight: 600; }
+.stock-msg.disponible { color: var(--success); }
+.stock-msg.agotado { color: var(--error); }
+
+#agregar-feedback {
+  margin-top: 10px;
+  color: var(--success);
+  font-weight: 600;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .detail-content { grid-template-columns: 1fr; }
+}
